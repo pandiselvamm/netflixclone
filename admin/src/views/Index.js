@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Argon Dashboard React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import { useState } from "react";
 // node.js library that concatenates classes (strings)
 import classnames from "classnames";
@@ -43,14 +27,28 @@ import {
   chartOptions,
   parseOptions,
   chartExample1,
-  chartExample2,
 } from "variables/charts.js";
 
 import Header from "components/Headers/Header.js";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Index = (props) => {
   const [activeNav, setActiveNav] = useState(1);
   const [chartExample1Data, setChartExample1Data] = useState("data1");
+  const [newUsers, SetNewUsers] = useState([]);
+
+  useEffect(() => {
+    const getNewUsers = async () => {
+      try {
+        const res = await axios.get("/users/stats");
+        SetNewUsers(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getNewUsers();
+  }, [])
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -115,29 +113,6 @@ const Index = (props) => {
                     data={chartExample1[chartExample1Data]}
                     options={chartExample1.options}
                     getDatasetAtEvent={(e) => console.log(e)}
-                  />
-                </div>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xl="4">
-            <Card className="shadow">
-              <CardHeader className="bg-transparent">
-                <Row className="align-items-center">
-                  <div className="col">
-                    <h6 className="text-uppercase text-muted ls-1 mb-1">
-                      Performance
-                    </h6>
-                    <h2 className="mb-0">Total orders</h2>
-                  </div>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                {/* Chart */}
-                <div className="chart">
-                  <Bar
-                    data={chartExample2.data}
-                    options={chartExample2.options}
                   />
                 </div>
               </CardBody>

@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 :root {
   --blue: #5e72e4;
   --indigo: #5603ad;
@@ -12302,6 +12285,7 @@ a.btn-icon-only {
   border-radius: 0.4375rem; }
 
 .footer {
+  bottom: 0px;
   background: #f7fafc;
   padding: 2.5rem 0; }
   .footer .col-footer .heading {
@@ -12425,11 +12409,6 @@ textarea[resize="horizontal"] {
     border-color: rgba(50, 151, 211, 0.25); }
   .has-success .form-control::placeholder {
     color: #2dce89; }
-
-.has-danger:after {
-  content: "\ea53";
-  color: daken(#fb6340, 18%);
-  background-color: #fda08b; }
 
 .has-danger .form-control {
   background-color: #fff; }
@@ -13971,7 +13950,7 @@ textarea[resize="horizontal"] {
     .separator-skew {
       height: 70px; } }
 
-.table thead th {
+.table thead th, .table .rdt_TableHead .rdt_TableHeadRow, .rdt_Table thead th, .rdt_Table .rdt_TableHead .rdt_TableHeadRow {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 0.65rem;
@@ -13979,28 +13958,30 @@ textarea[resize="horizontal"] {
   letter-spacing: 1px;
   border-bottom: 1px solid #e9ecef; }
 
-.table th {
+.table th, .table .rdt_TableHeadRow, .rdt_Table th, .rdt_Table .rdt_TableHeadRow {
   font-weight: 600; }
 
-.table td .progress {
+.table td .progress, .rdt_Table td .progress {
   height: 3px;
   width: 120px;
   margin: 0; }
 
 .table td,
-.table th {
+.table th, .rdt_Table td,
+.rdt_Table th {
   font-size: 0.8125rem;
   white-space: nowrap; }
 
 .table.align-items-center td,
-.table.align-items-center th {
+.table.align-items-center th, .rdt_Table.align-items-center td,
+.rdt_Table.align-items-center th {
   vertical-align: middle; }
 
-.table .thead-dark th {
+.table .thead-dark th, .rdt_Table .thead-dark th {
   background-color: #1c345d;
   color: #4d7bca; }
 
-.table .thead-light th {
+.table .thead-light th, .table .thead-light .rdt_TableCol, .table .rdt_TableHeadRow th, .table .rdt_TableHeadRow .rdt_TableCol, .rdt_Table .thead-light th, .rdt_Table .thead-light .rdt_TableCol, .rdt_Table .rdt_TableHeadRow th, .rdt_Table .rdt_TableHeadRow .rdt_TableCol {
   background-color: #f6f9fc;
   color: #8898aa; }
 
@@ -14023,10 +14004,15 @@ textarea[resize="horizontal"] {
 .table-flush tbody tr:last-child th {
   border-bottom: 0; }
 
-.card .table {
+.rdt_TableHeadRow {
+  background-color: #f6f9fc !important;
+  color: #8898aa; }
+
+.card .table, .card .rdt_Table {
   margin-bottom: 0; }
   .card .table td,
-  .card .table th {
+  .card .table th, .card .rdt_Table td,
+  .card .rdt_Table th {
     padding-left: 1.5rem;
     padding-right: 1.5rem; }
 
@@ -16143,5 +16129,3 @@ button:focus, :focus {
 
 .table .badge i {
   margin-right: 10px; }
-
-/*# sourceMappingURL=argon-dashboard-react.css.map */

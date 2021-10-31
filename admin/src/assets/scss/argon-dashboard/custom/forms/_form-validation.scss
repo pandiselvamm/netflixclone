@@ -49,11 +49,6 @@
 }
 
 .has-danger {
-    &:after {
-        content: "\ea53";
-        color: daken($form-feedback-invalid-color, 18%);
-        background-color: $form-feedback-invalid-bg;
-    }
 
     .form-control {
         background-color: $input-focus-bg;

@@ -5,8 +5,8 @@
 
 // General styles
 
-.table {
-    thead th {
+.table ,.rdt_Table {
+    thead th  ,.rdt_TableHead .rdt_TableHeadRow{
         padding-top: $table-head-spacer-y;
         padding-bottom: $table-head-spacer-y;
         font-size: $table-head-font-size;
@@ -15,7 +15,7 @@
         border-bottom: $table-border-width solid $table-border-color;
     }
 
-    th {
+    th ,.rdt_TableHeadRow{
         font-weight: $table-head-font-weight;
     }
 
@@ -56,8 +56,8 @@
 
     // Styles for light table
 
-    .thead-light {
-        th {
+    .thead-light ,.rdt_TableHeadRow {
+        th ,.rdt_TableCol{
             background-color: $table-head-bg;
             color: $table-head-color;
         }
@@ -104,9 +104,12 @@
 
 
 // Tables inside cards
-
+.rdt_TableHeadRow{
+    background-color: $table-head-bg !important;
+    color: $table-head-color;
+}
 .card {
-    .table {
+    .table ,.rdt_Table{
         margin-bottom: 0;
 
         td,

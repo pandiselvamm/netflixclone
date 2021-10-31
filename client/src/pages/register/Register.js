@@ -1,10 +1,10 @@
-import { useRef , useState } from 'react';
+import { useRef, useState } from 'react';
 import './register.scss'
 
 export const Register = () => {
 
-    const [email , SetEmail] = useState("");
-    const [password , SetPassword] = useState("");
+    const [email, SetEmail] = useState("");
+    const [password, SetPassword] = useState("");
     const emailRef = useRef();
     const passwordRef = useRef();
 
@@ -20,7 +20,7 @@ export const Register = () => {
         <div className="register">
             <div className="top">
                 <div className="wrapper">
-                    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1597px-Netflix_2015_logo.svg.png" alt=""/>
+                    <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1597px-Netflix_2015_logo.svg.png" alt="" />
                     <button className="loginButton">Sign In</button>
                 </div>
             </div>
@@ -32,12 +32,12 @@ export const Register = () => {
                 </p>
                 {!email ? (
                     <div className="input">
-                        <input type="email" placeholder="email address" ref={emailRef}/>
+                        <input type="email" placeholder="email address" ref={emailRef} />
                         <button className="registerButton" onClick={handleStart}>Get Started</button>
                     </div>
                 ) : (
                     <form className="input">
-                        <input type="password" placeholder="password" ref={passwordRef}/>
+                        <input type="password" placeholder="password" ref={passwordRef} />
                         <button className="registerButton" onClick={handleFinish}>Finish</button>
                     </form>
                 )}
